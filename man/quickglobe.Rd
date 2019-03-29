@@ -2,10 +2,22 @@
 % Please edit documentation in R/quickglobe.R
 \name{quickglobe}
 \alias{quickglobe}
-\title{<Add Title>}
+\title{Spin the Globe!}
 \usage{
-quickglobe()
+quickglobe(.data, isoIdCol, valueCol, colorRamp1 = "#fff7ec",
+  colorRamp2 = "#7f0000")
+}
+\arguments{
+\item{.data}{A data frame with a at least two columns.}
+
+\item{isoIdCol}{Column name of an ISO-3166 formatted country code.}
+
+\item{valueCol}{Column name of the value to shade.}
+
+\item{colorRamp1}{The bottom of the rendered color ramp.}
+
+\item{colorRamp2}{The top of the rendered color ramp.}
 }
 \description{
-<Add Description>
+Render an interactive 3D globe.
 }

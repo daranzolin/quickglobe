@@ -1,11 +1,17 @@
-#' <Add Title>
+#' Spin the Globe!
 #'
-#' <Add Description>
+#' Render an interactive 3D globe.
 #'
 #' @import htmlwidgets
 #'
+#' @param .data A data frame with a at least two columns.
+#' @param isoIdCol Column name of an ISO-3166 formatted country code.
+#' @param valueCol Column name of the value to shade.
+#' @param colorRamp1 The bottom of the rendered color ramp.
+#' @param colorRamp2 The top of the rendered color ramp.
+#'
 #' @export
-quickglobe <- function(.data, isoIdCol, valueCol, colorPalette) {
+quickglobe <- function(.data, isoIdCol, valueCol, colorRamp1 = "#fff7ec", colorRamp2 = "#7f0000") {
 
   if (!inherits(.data, "data.frame")) {
     stop("data must be a data frame.", call. = FALSE)
@@ -17,7 +23,8 @@ quickglobe <- function(.data, isoIdCol, valueCol, colorPalette) {
   names(data) <- c("id", "val")
 
   settings <- list(
-    colorPalette = colorPalette
+    colorRamp1 = colorRamp1,
+    colorRamp2 = colorRamp2
   )
 
   x = list(

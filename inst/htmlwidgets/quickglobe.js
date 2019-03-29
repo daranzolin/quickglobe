@@ -16,10 +16,9 @@ HTMLWidgets.widget({
         let [minVal, maxVal] = d3.extent(data, d => d.val);
         let color = d3.scaleLinear()
                       .domain([minVal, maxVal])
-                      .range(['#d73027', '#1a9850'])
-                      .interpolate(d3.interpolateHcl);
+                      .range([opts.settings.colorRamp1, opts.settings.colorRamp2]);
+                      //.interpolate(d3.interpolateHcl);
         let dataMap = new Map(data.map(d => [d.id, d.val]));
-
         let projection = d3.geoOrthographic().clipAngle(90);
         let path = d3.geoPath().projection(projection);
         let sens = 0.25;
