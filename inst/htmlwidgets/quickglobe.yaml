@@ -1,0 +1,21 @@
+ dependencies:
+  - name: d3js
+    version: 5.7.0
+    src: htmlwidgets/lib/d3
+    script: d3.min.js
+  - name: 'shapes'
+    version: 0.1.0
+    src: htmlwidgets/lib/shapes
+    attachment: {"world": 'world110m.json'}
+  - name: 'mapdata'
+    version: 0.1.0
+    src: htmlwidgets/lib/mapdata
+    attachment: {"countrynames": '110m.tsv'}
+  - name: topojson
+    version: 1.6.9
+    src: htmlwidgets/lib/topojson
+    script: topojson.min.js
+  - name: compareBars
+    src: htmlwidgets/lib/quickglobe
+    version: 0.0.1
+    stylesheet: style.css
