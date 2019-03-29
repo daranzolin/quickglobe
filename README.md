@@ -34,7 +34,7 @@ gm_data$iso_id <- case_when(
 
 quickglobe(gm_data, iso_id, gdpPercap)
 ```
-<iframe src="https://giphy.com/embed/3Wvhuqdhm9Vx2aMzPj" width="480" height="474" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rstats-globe-3Wvhuqdhm9Vx2aMzPj">via GIPHY</a></p>
+![](https://media.giphy.com/media/2A5BMJ7VrDaxGERyEP/giphy.gif)
 
 ## Future Work
 Several features are missing:
