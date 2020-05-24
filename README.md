@@ -2,7 +2,7 @@
 
 > Spin's the name, and rocking round the globe's the game!
 
-This package was mostly an excuse to sync up some #rstats, GIS, and D3 tricks. It needs a lot more work.
+This package was mostly an excuse to sync up some #rstats, GIS, and D3 tricks. 
 
 I really wanted to name this package `spintheglobe` in homage to [National Geographic's Really Wild Animals](https://en.wikipedia.org/wiki/Really_Wild_Animals) docs, but the internet has a severe deficit of Spin content. 
 
@@ -16,30 +16,19 @@ devtools::install_packages_github("daranzolin/quickglobe")
 
 ## Spinning the Globe
 
-`quickglobe` renders an interactive, 3D globe. There is, however, some data prep: you must convert your country data to the [ISO-3166 format.](https://en.wikipedia.org/wiki/ISO_3166-1_numeric) Here the `countrycode` package is a helpful utility. 
+`quickglobe` renders an interactive, 3D globe. It will attempt to match a country 'identifier' (e.g. name, iso code) within the function, so there's no need to worry about geometry or other spatial concerns. Your identifier strings, however, have to be relatively clean.
 
 ``` r
 library(gapminder)
-library(countrycode)
-library(dplyr)
 library(quickglobe)
-gm_data <- gapminder %>% 
-  filter(year == 2002) 
-gm_data$iso_id <- as.character(countrycode(gm_data$country, 'country.name', 'iso3n'))
-gm_data$iso_id <- case_when( 
-                            nchar(gm_data$iso_id) == 2 ~ paste0("0", gm_data$iso_id),
-                            nchar(gm_data$iso_id) == 1 ~ paste0("00", gm_data$iso_id),
-                            TRUE ~ gm_data$iso_id
-                            )
 
-quickglobe(gm_data, iso_id, gdpPercap)
+gapminder %>% 
+  filter(year == 2002) %>%
+  quickglobe(country, gdpPercap, title = "GDP Per Capita")
 ```
-![](https://media.giphy.com/media/2A5BMJ7VrDaxGERyEP/giphy.gif)
 
-## Future Work
-Several features are missing:
+![](inst/example1.gif)
 
-* Tooltip
-* Legend
-* Titles
-* More styling options
+## Styling the Globe
+
+Use different palettes, adjust the title font family, choose the number of legend cells, and format the legend ticks in `qg_style`

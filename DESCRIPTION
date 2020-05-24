@@ -1,13 +1,15 @@
 Package: quickglobe
-Title: What the Package Does (one line, title case)
+Title: Create Interative 3D Globes
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.5.1)
-License: What license is it under?
+Authors@R: person("David", "Ranzolin", email = "daranzolin@gmail.com", role = c("aut", "cre"))
+Description: Create and style interactive, 3-D, chloropleth globes. 
+Depends: R (>= 3.6)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Imports: 
     dplyr,
-    rlang
+    rlang,
+    htmlwidgets,
+    magrittr

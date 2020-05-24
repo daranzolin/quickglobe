@@ -1,12 +1,14 @@
 .boundary {
-  stroke: #888;
   stroke-linejoin: round;
+  stroke: #444;
 }
+/*
 svg {
   border-style: solid;
   border-width: 1px;
   border-color: #ccc;
 }
+*/
 .overlay {
   fill: none;
   pointer-events: all;

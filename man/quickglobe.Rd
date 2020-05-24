@@ -4,19 +4,18 @@
 \alias{quickglobe}
 \title{Spin the Globe!}
 \usage{
-quickglobe(.data, isoIdCol, valueCol, colorRamp1 = "#fff7ec",
-  colorRamp2 = "#7f0000")
+quickglobe(data, identifier, fill, legend = TRUE, title = NULL)
 }
 \arguments{
-\item{.data}{A data frame with a at least two columns.}
+\item{data}{A data frame with a at least two columns.}
 
-\item{isoIdCol}{Column name of an ISO-3166 formatted country code.}
+\item{identifier}{Column name of country identifier.}
 
-\item{valueCol}{Column name of the value to shade.}
+\item{fill}{Column name of the value to shade.}
 
-\item{colorRamp1}{The bottom of the rendered color ramp.}
+\item{legend}{Whether to include a legend}
 
-\item{colorRamp2}{The top of the rendered color ramp.}
+\item{title}{Viz title, centered on top of globe.}
 }
 \description{
 Render an interactive 3D globe.
