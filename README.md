@@ -20,6 +20,7 @@ devtools::install_packages_github("daranzolin/quickglobe")
 
 ``` r
 library(gapminder)
+library(dplyr)
 library(quickglobe)
 
 gapminder %>% 
